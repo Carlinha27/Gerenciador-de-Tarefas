@@ -25,7 +25,6 @@ export function ativarBotoesRemover() {
     });
   }
 }
-
 /* OUTRA FORMA DE FAZER COM QUE O BOTÃO EXCLUA UM ELEMENTO
 const listaDeTarefas = document.querySelector(".task__list")
 listaDeTarefas.addEventListener("click", function(event){
@@ -35,3 +34,13 @@ li.remove()
 }
 });
 */
+
+const text = document.querySelector(".header__input--search");
+text.addEventListener("input", () => {
+  const value = text.value;
+  console.log(value);
+  const resultado = tasks.filter((element) =>
+    element.title.toLowerCase().includes(value.toLowerCase()),
+  );
+  (renderElements(resultado), console.log(resultado));
+});
